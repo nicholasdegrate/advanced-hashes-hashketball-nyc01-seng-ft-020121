@@ -203,57 +203,6 @@ def big_shoe_rebounds
   result 
 end
 
-def most_points_scored
-  most_points = 0 
-  result = ""
-  game_hash.each do |team, team_info|
-    team_info[:players].each do |player_stats|
-      if most_points < player_stats[:points]
-        most_points = player_stats[:points]
-        result = player_stats[:player_name]
-      end 
-    end 
-  end 
-  result
-end 
 
-def winning_team
-    team_home_pts = 0
-    team_away_pts = 0
-    winning_team = ""
-    game_hash.each do |team, team_info|
-      team_info[:players].each do |player_stats|
-        if team == :home
-          team_home_pts += player_stats[:points]
-        else 
-          team_away_pts += player_stats[:points]
-        end
-      end 
-    end 
-    puts team_home_pts
-    puts team_away_pts
-   if team_home_pts > team_away_pts 
-      winning_team = game_hash[:home][:team_name]
-   elsif team_home_pts < team_away_pts
-      winning_team = game_hash[:away][:team_name]
-   else 
-      winning_team = "Both teams are winners!"
-   end
-    winning_team
-  end
-  
-  puts winning_team
 
-def player_with_longest_name
-  longest_name = 0
-  result = ""
-  game_hash.each do |team, team_info|
-    team_info[:players].each do |player_stats|
-      if longest_name < player_stats[:player_name].length
-        longest_name = player_stats[:player_name].length
-        result = player_stats[:player_name]
-      end
-    end 
-  end 
-  result
-end
+
